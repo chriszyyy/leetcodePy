@@ -4,11 +4,9 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        if x > 0:
-            s = 1
-        elif x < 0:
-            s = -1
-        else:
-            s = 0
+        s = (x > 0) - (x < 0)
         r = int(`s * x`[::-1])
         return s * r * (r < 2**31)
+
+#python2 has cmp for comparing two number
+#python3 is (a > b) - (a < b)
